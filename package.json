@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "@tonejs/midi": "^2.0.28",
+    "express": "^4.21.2",
+    "three": "^0.132.0",
+    "tone": "^15.0.4"
+  },
+  "name": "piano_transcription",
+  "version": "1.0.0",
+  "description": "Piano transcription is the task of transcribing piano recordings into MIDI files. This repo is the PyTorch implementation of our proposed high-resolution piano transcription system [1].",
+  "main": "page.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --mode development --open",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
+    "html-webpack-plugin": "^5.6.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.2.0"
+  }
+}

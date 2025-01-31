@@ -1,0 +1,10 @@
+*
+!*/
+!*.*
+*.hdf5
+*.pyc
+__pycache__
+resources/
+myenv/
+CRNN_note_F1=0.9677_pedal_F1=0.9186.pth
+

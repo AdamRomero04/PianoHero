@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="songs.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://unpkg.com/@tonejs/midi@2.0.28/build/Midi.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script src="songs.js"></script>
+</head>
+<body>
+    <div class="logoTop">
+        <div class="mainTitle">
+            <div>Piano Hero</div>
+        </div>
+        <img src="../img/pngtree-piano-icon-vector-png-image_5941830.png" id="logo">
+    </div>
+    <div class="topSection">
+        <div class="searchSectionLeft">
+            <div class="sort">
+                <div class="songOrder">Sort: A - Z</div>
+                <div class="songOrder">Sort: Top Rated</div>
+                <div class="songOrder">Sort: Most Played</div>
+            </div>
+            <div class="searchAdd">
+                <input type="text" class="searchBar" placeholder="Search">
+                <img src="../img/search-icon-2048x2048-cmujl7en.png" class="searchIcon">
+                <button class="add" onclick="openPopUp()">
+                    <img class ="plus" src="img/PngItem_679828.png">
+                </button>
+            </div>
+        </div>
+        <div class="notesSectionRight">
+            <div class="notesName">Patch Notes</div>
+            <div class="notesArea">
+                <div class="notes">- Add song button is now compatible with MIDI files</div>
+                <div class="notes">- Songs and maps are stored/retreived from the database</div>
+                <div class="notes">- Bug where song maps weren't synced with the song is fixed</div>
+            </div>
+        </div>
+    </div>
+    <div class="botSection">
+        <div class="songArea">
+            <div class="song">
+                <div class="leftColor"></div>
+                <div class="rightBody">
+                    <div class="songWords">
+                        <div class="songName">Sample Never Display</div>
+                        <div class="songArtist">Sample</div>
+                    </div>
+                    <div class="buttons">
+                        <button class="practice" onclick="practiceClick(this)">Practice</button >
+                        <button class="play" onclick="playClick(this)">Play</button >
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="songPopup">
+        <div class="topPopUp">
+            <div class="inputGuide">Song Name</div>
+            <input type="text" class="textInput" id="songName"/>
+            <div class="inputGuide">Artist</div>
+            <input type="text" class="textInput" id="artistName"/>
+            <div class="inputGuide">Song File</div>
+            <div class="fileInput">
+                <label for="fileUpload" class="fileButton">Upload File</label>
+                <span class="fileText">No file selected</span>
+                <input type="file" id="fileUpload" class="hiddenFileInput" accept=".mid,.midi"/>
+            </div>
+        </div>
+        <div class="bottomButtons">
+            <button class="cancelButton" onclick="closePopUp()">Cancel</button>
+            <button class="confirmButton" onclick="addSong()">Confirm</button>
+        </div>
+    </div>
+    <div class="practicePopup">
+        <div class="songSelected"></div>
+        <div class="artistSelected"></div>
+        <div class="speed">Speed</div>
+        <input type="range" class="slider" min="1" max="200" value="100" id="slider">
+        <div class="value">100</div>
+        <div class="perfectRunContainer">
+            <input type="checkbox" id="perfectRun" class="perfectRunCheckbox">
+            <label for="perfectRun">Perfect Run?</label>
+        </div>
+        <div>
+            <button class="cancelSpeed" onclick="closeSpeedPopup(this)">Cancel</button>
+            <button class="goButton" onclick="startPracticeSong(this)">Start</button>
+        </div>
+    </div>
+    <div class="darkBackground"></div>
+</body>
+</html>
